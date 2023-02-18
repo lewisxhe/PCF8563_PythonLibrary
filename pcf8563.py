@@ -177,16 +177,16 @@ class PCF8563:
             self.__write_byte(PCF8563_DAY_REG, self.__dec2bcd(date))
 
         if day is not None:
-            if day < 1 or day > 7:
-                raise ValueError('Day is out of range [1,7].')
+            if day < 0 or day > 6:
+                raise ValueError('Day is out of range [0,6].')
             self.__write_byte(PCF8563_WEEKDAY_REG, self.__dec2bcd(day))
 
     def set_datetime(self, dt):
         """Input a tuple such as (year, month, date, day, hours, minutes,
         seconds).
         """
-        self.write_all(dt[5], dt[4], dt[3],
-                       dt[6], dt[2], dt[1], dt[0] % 100)
+        self.write_all(dt[6],dt[5], dt[4], dt[3],
+                       dt[2], dt[1], dt[0] % 100)
 
     def write_now(self):
         """Write the current system time to PCF8563
