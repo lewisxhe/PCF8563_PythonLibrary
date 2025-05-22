@@ -1,0 +1,7 @@
+{
+  "urls": [
+    ["pcf8563.py", "github:lewisxhe/PCF8563_PythonLibrary/pcf8563.py"]
+  ],
+  "version": "1.0.0",
+  "deps": []
+}
